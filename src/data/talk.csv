@@ -1,0 +1,40 @@
+序号,日期,报告人,报告人单位,题目,地点,类型
+39,2025.8.29,刘方,杜伦大学,基于Birkhoff-von Neumann分解的仓库商品组合选择启发式方法,管理学院一楼第一教室,学术报告
+38,2025.8.29,李媛媛,HEC蒙特利尔商学院,冲刺还是漫步？在设施生产能力投资之前管理初创企业的增长,管理学院一楼第一教室,学术报告
+37,2025.5.14,覃含章,新加坡国立大学,基于大语言模型的大规模优化模型自动构建：一种少样本学习方法,管理学院一楼第二案例室,学术报告
+36,2025.2.27,戚瑾,香港科技大学,考虑相关性的分布式鲁棒群检验,管理学院一楼第二案例室,学术报告
+35,2025.1.14,陈力,悉尼大学,基于矩—离散度的鲁棒优化,管理学院一楼第二案例室,学术报告
+34,2025.1.9,芦涛,康涅狄格大学,向报童提供信息：廉价沟通与预测性人工智能,管理学院一楼第二案例室,学术报告
+33,2025.1.9,赵燕鲁,杜伦大学,在线食品配送平台的实时匹配和路径优化决策,管理学院一楼第二案例室,学术报告
+32,2025.1.9,董昶,杜伦大学,共享经济下的奢侈品：顾客间点对点租赁对炫耀性消费的影响,管理学院一楼第二案例室,学术报告
+31,2024.12.17,陈新,佐治亚理工,一类有限时域马尔可夫决策过程的策略梯度目标函数非凸结构：在运筹模型中的应用,国际金融研究院5号楼301,学术报告
+30,2024.11.26,陈植,香港中文大学,考虑均值-方差模糊性和误设性的报童问题,管科楼第四教室,学术报告
+29,2024.11.26,何翘楚,南方科技大学,自动驾驶：排队博弈、信息设计和人机交互,管科楼第四教室,学术报告
+28,2024.9.14,彭一杰,北京大学,基于深度强化学习的库存与推荐系统协同,管科楼第三教室,学术报告
+27,2024.08.01-04,张真真,同济大学,大规模整数规划,第五教学楼5106,课程
+26,2023.7.14-15,李纪柳,西北工业大学,精确优化算法理论与实践,第二教学楼2408,课程
+25,2023.7.12-13,章宇,西南财经大学,不确定优化简介,第二教学楼2407,课程
+24,2023.5.27,齐向彤,香港科技大学,Mitigation Strategies and Operations in Confronting Infectious Deseases,管科楼第五教室,学术报告
+23,2022.6.29-7.3,王志,南京大学,Deep Reinforcement Learning,EMBA第二教室,课程
+22,2022.5.22,逯兰,中国科学技术大学,Escape the “Blackholes”: Predictive and Prescriptive Analytics for Bicycle-Sharing Maintenance,线上,学术报告
+21,2022.5.22,余虎,中国科学技术大学,Dense and fast: Achieving shortest unimpeded retrieval with a minimum number of empty cells in puzzle-based storage systems,线上,学术报告
+20,2022.5.21,章宇,西南财经大学,Feature-Driven Robust Surgery Scheduling,线上,学术报告
+19,2022.5.21,罗志兴,南京大学,The Electric Vehicle Routing Problem with Nonlinear Charging Functions,线上,学术报告
+18,2022.5.21,王晓蕾,同济大学,动态拼车模式下订单的拼车概率、预期行驶里程及预期共乘里程预测,线上,学术报告
+17,2022.5.21,王钟彬,天津大学,Pooling Servers for Customer-Intensive Services: Theory and Experimental Evidence,线上,学术报告
+16,2022.5.21,黄军飞,香港中文大学,To Pool or Not to Pool: Queueing Design for Large-Scale Service Systems,线上,学术报告
+15,2022.5.21,刘雨楠,北卡罗来纳州立大学,An Online Learning Approach to Dynamic Pricing and Capacity Sizing in Service Systems,线上,学术报告
+14,2022.5.21,何龙,乔治华盛顿大学,An Exponential Cone Programming Approach for Managing Electric Vehicle Charging,线上,学术报告
+13,2022.5.21,徐宙,香港理工大学,考虑货物存置成本的连续时间运输服务网络设计,线上,学术报告
+12,2022.5.21,舒嘉,电子科技大学,A General Model and Efficient Algorithms for Reliable Facility Location Problem under Uncertain Disruptions,线上,学术报告
+11,2021.7.15,张真真,同济大学,Vessel Deployment with Limited Information: Distributionally Robust Chance Constrained Models,EMBA第一教室,学术报告
+10,2021.6.18,李安然,伦敦政经,Revenue Maximization and Learning in Products Ranking,线上,学术报告
+9,2021.5.14,秦虎,华中科技大学,考虑时间窗口和卸货队列的多行程车辆路径问题,EMBA第一教室,学术报告
+8,2021.5.14,金建刚,上海交通大学,Feeder Vessel Routing and Transshipment Coordination in a Hub-and-Spoke Maritime Shipping Network,EMBA第一教室,学术报告
+7,2021.4.29,樊潇帅,南方科技大学,Is Price Commitment a Better Solution to Control Carbon Emissions and Promote Technology Investment?,线上,学术报告
+6,2021.4.8,何翘楚,南方科技大学,"Service Operations for Mixed Autonomous Paradigm: Lane Design, Subsidy and Smart Navigation",线上,学术报告
+5,2020.12.29,王志,南京大学,Reinforcement Learning in Dynamic Environments,EMBA第一教室,学术报告
+4,2020.12.29,占杨,南京大学,"Pairwise Stable Networks: Structure, Computation and Selection",EMBA第一教室,学术报告
+3,2020.8,陈新,伊利诺伊大学香槟分校,Markov Decision Processes and Its Applications in Operations,线上,课程
+2,2018.5.25,齐向彤,香港科技大学,From Industrial Projects to Academic Research,东区五教5106,学术报告
+1,2017.9.12,王譞,香港科技大学,Online Resource Allocation with Limited Flexibility,EMBA第三教室,学术报告

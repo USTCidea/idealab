@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/images/logo.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="智能决策博弈与数字经济创新实验室隶属于中科大管理学院和“智能决策博弈与数字经济创新”安徽省哲学社会科学重点实验室，主要运用线性规划、组合优化、鲁棒优化、强化学习等运筹管理和人工智能等学科中的方法，通过数据分析、数学建模、模型解析、实验仿真的范式，对交通、物流、制造、应急等场景中的决策与博弈问题进行研究。"
+    />
+    <meta
+      name="keywords"
+      content="线性规划,组合优化,鲁棒优化,强化学习,运筹学,决策与博弈,人工智能,学术研究"
+    />
+    <meta name="author" content="智能决策博弈与数字经济创新实验室" />
+    <title>智能决策博弈与数字经济创新实验室</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Handle redirect from 404.html for SPA routing
+      (function () {
+        const redirect = sessionStorage.getItem("pathToRedirect");
+        if (redirect) {
+          sessionStorage.removeItem("pathToRedirect");
+          // Use history.replaceState to navigate without adding to browser history
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
