@@ -1257,7 +1257,7 @@ export const mockTeamMembers: TeamMember[] = [
     nameEn: "Yilang Fu",
     role: "master",
     avatar: "/images/avatars/付一郎.jpg",
-    email: "fyl@mail.ustc.edu.cn",
+    email: "SA262044191@mail.ustc.edu.cn",
     researchInterests: ["学习优化"],
     type: "academic",
     bio: "专注于学习优化研究。",
