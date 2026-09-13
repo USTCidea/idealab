@@ -38,7 +38,7 @@ export const readingGroups: ReadingGroup[] = [
   {
     id: "group-3",
     name: "数据智能方向",
-    teachers: ["于成成", "汪勐航", "逯兰", "刘文情"],
+    teachers: ["于成成", "汪勐航", "逯兰", "刘文倩"],
     members: ["徐光辉", "李昊洋", "李鉴岐", "仝宇", "付一郎"],
   },
   {
