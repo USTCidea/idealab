@@ -12,6 +12,7 @@ const navigation: NavItem[] = [
   { name: "学术论文", path: "/publications" },
   { name: "新闻动态", path: "/news" },
   { name: "学术讲座", path: "/lectures" },
+  { name: "阅读小组", path: "/reading-groups" },
   { name: "团队风采", path: "/gallery" },
   { name: "研究方向", path: "/research" },
   { name: "时间线", path: "/timeline" },
@@ -75,8 +76,8 @@ const Header: React.FC = () => {
               </div>
 
               {/* Desktop Navigation */}
-              <div className="hidden md:block">
-                <div className="flex items-center space-x-8">
+              <div className="hidden xl:block">
+                <div className="flex items-center space-x-4">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
@@ -95,7 +96,7 @@ const Header: React.FC = () => {
               </div>
 
               {/* Mobile menu button */}
-              <div className="md:hidden">
+              <div className="xl:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
                   <span className="sr-only">打开主菜单</span>
                   {open ? (
@@ -109,7 +110,7 @@ const Header: React.FC = () => {
           </Container>
 
           {/* Mobile Navigation */}
-          <Disclosure.Panel className="md:hidden bg-white border-t border-gray-200">
+          <Disclosure.Panel className="xl:hidden bg-white border-t border-gray-200">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
                 <Disclosure.Button

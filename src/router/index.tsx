@@ -8,6 +8,7 @@ import Team from "../pages/Team";
 import MemberDetail from "../pages/MemberDetail";
 import Publications from "../pages/Publications";
 import News from "../pages/News";
+import ReadingGroups from "../pages/ReadingGroups";
 import NewsAll from "../pages/NewsAll";
 import NewsDetail from "../pages/NewsDetail";
 import Announcements from "../pages/Announcements";
@@ -27,6 +28,7 @@ const AppRouter: React.FC = () => {
           <Route path="/team/:id" element={<MemberDetail />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/lectures" element={<News />} />
+          <Route path="/reading-groups" element={<ReadingGroups />} />
           <Route path="/news" element={<NewsAll />} />
           <Route path="/news/:id" element={<NewsDetail />} />
           <Route path="/gallery" element={<Gallery />} />
