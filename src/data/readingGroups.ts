@@ -32,7 +32,7 @@ export const readingGroups: ReadingGroup[] = [
   {
     id: "group-2",
     name: "优化学习方向",
-    teachers: ["朱龔", "杜建忠", "张勋", "王澹"],
+    teachers: ["朱龑", "杜建忠", "张勋", "王澹"],
     members: ["林家祥", "段睿", "邢淦琛", "李淑宇", "刘元辛", "金柯", "苏睿涵", "陈郅奥"],
   },
   {
