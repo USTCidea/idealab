@@ -7,6 +7,12 @@ import type { TeamMember } from "../types";
 const isAlumniPhd = (member: TeamMember) =>
   member.role === "postdoc" || (member.bio?.includes("博士") ?? false);
 
+const isAcademicPhd = (member: TeamMember) =>
+  member.role === "phd" && member.type !== "engineer";
+
+const isEngineeringPhd = (member: TeamMember) =>
+  member.role === "phd" && member.type === "engineer";
+
 const sortAlumni = (members: TeamMember[]) =>
   [...members].sort((a, b) => {
     const degreeOrder = Number(isAlumniPhd(b)) - Number(isAlumniPhd(a));
@@ -18,7 +24,8 @@ const Team: React.FC = () => {
   type RoleType =
     | "faculty"
     | "postdoc"
-    | "phd"
+    | "academic_phd"
+    | "engineering_phd"
     | "academic_master"
     | "professional_master"
     | "alumni"
@@ -29,6 +36,10 @@ const Team: React.FC = () => {
   const filteredMembers =
     selectedRole === "all"
       ? mockTeamMembers
+      : selectedRole === "academic_phd"
+      ? mockTeamMembers.filter(isAcademicPhd)
+      : selectedRole === "engineering_phd"
+      ? mockTeamMembers.filter(isEngineeringPhd)
       : selectedRole === "academic_master"
       ? mockTeamMembers.filter(
           (m) => m.role === "master" && m.type === "academic"
@@ -47,11 +58,12 @@ const Team: React.FC = () => {
       ? getFacultyMembers()
       : mockTeamMembers.filter((member) => member.role === selectedRole);
 
-  // 按角色分组显示，将硕士生分为学硕和专硕
+  // 按角色分组显示，将博士生和硕士生分别按培养类型展示
   const membersByRole = {
     faculty: getFacultyMembers(),
     postdoc: mockTeamMembers.filter((m) => m.role === "postdoc"),
-    phd: mockTeamMembers.filter((m) => m.role === "phd"),
+    academic_phd: mockTeamMembers.filter(isAcademicPhd),
+    engineering_phd: mockTeamMembers.filter(isEngineeringPhd),
     academic_master: mockTeamMembers.filter(
       (m) => m.role === "master" && m.type === "academic"
     ),
@@ -66,7 +78,8 @@ const Team: React.FC = () => {
   const roleDisplayNames = {
     faculty: "导师",
     postdoc: "博士后",
-    phd: "博士生",
+    academic_phd: "学术型博士",
+    engineering_phd: "工程博士",
     academic_master: "学术型硕士",
     professional_master: "专业型硕士",
     alumni: "毕业生",
@@ -75,7 +88,8 @@ const Team: React.FC = () => {
   const roleColors = {
     faculty: "bg-purple-100 text-purple-800 border-purple-200",
     postdoc: "bg-indigo-100 text-indigo-800 border-indigo-200",
-    phd: "bg-blue-100 text-blue-800 border-blue-200",
+    academic_phd: "bg-blue-100 text-blue-800 border-blue-200",
+    engineering_phd: "bg-cyan-100 text-cyan-800 border-cyan-200",
     academic_master: "bg-green-100 text-green-800 border-green-200",
     professional_master: "bg-teal-100 text-teal-800 border-teal-200",
     alumni: "bg-gray-100 text-gray-800 border-gray-200",

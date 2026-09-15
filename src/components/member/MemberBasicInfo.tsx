@@ -27,15 +27,15 @@ const formatMemberBio = (member: TeamMember) => {
 const MemberBasicInfo: React.FC<MemberBasicInfoProps> = ({ member }) => {
   const displayBio = formatMemberBio(member);
 
-  const getRoleDisplayName = (role: TeamMember["role"]) => {
+  const getRoleDisplayName = (member: TeamMember) => {
     const roleMap = {
       faculty: "导师",
       postdoc: "博士后",
-      phd: "博士生",
+      phd: member.type === "engineer" ? "工程博士" : "学术型博士",
       master: "硕士生",
       alumni: "毕业生",
     };
-    return roleMap[role];
+    return roleMap[member.role];
   };
 
   const getRoleColor = (role: TeamMember["role"]) => {
@@ -81,7 +81,7 @@ const MemberBasicInfo: React.FC<MemberBasicInfoProps> = ({ member }) => {
                 member.role
               )}`}
             >
-              {getRoleDisplayName(member.role)}
+              {getRoleDisplayName(member)}
             </span>
           </div>
         </div>
