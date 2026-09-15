@@ -537,7 +537,7 @@ export const mockTeamMembers: TeamMember[] = [
     alumniBio: "博士毕业生",
     joinYear: 2018,
     graduationYear: 2026,
-    currentPosition: "南方科技大学博士后",
+    currentPosition: "南方科技大学",
     education: [
       {
         degree: "博士学位",
@@ -564,7 +564,7 @@ export const mockTeamMembers: TeamMember[] = [
     alumniBio: "博士毕业生",
     joinYear: 2019,
     graduationYear: 2026,
-    currentPosition: "中国科学技术大学博士后",
+    currentPosition: "中国科学技术大学",
     education: [
       {
         degree: "博士学位",
@@ -591,7 +591,7 @@ export const mockTeamMembers: TeamMember[] = [
     alumniBio: "博士毕业生",
     joinYear: 2019,
     graduationYear: 2026,
-    currentPosition: "中国科学技术大学博士后",
+    currentPosition: "中国科学技术大学",
     education: [
       {
         degree: "博士学位",
@@ -618,7 +618,7 @@ export const mockTeamMembers: TeamMember[] = [
     alumniBio: "博士毕业生",
     joinYear: 2021,
     graduationYear: 2026,
-    currentPosition: "新加坡管理大学博士后",
+    currentPosition: "新加坡管理大学",
     education: [
       {
         degree: "博士学位",
@@ -1364,7 +1364,7 @@ export const mockTeamMembers: TeamMember[] = [
     bio: "博士毕业生",
     joinYear: 2020,
     graduationYear: 2025,
-    currentPosition: "中科大管院特任副研究员",
+    currentPosition: "中国科学技术大学",
     education: [
       {
         degree: "博士学位",
@@ -1390,7 +1390,7 @@ export const mockTeamMembers: TeamMember[] = [
     bio: "博士毕业生",
     joinYear: 2017,
     graduationYear: 2022,
-    currentPosition: "长鑫存储 主任工程师",
+    currentPosition: "长鑫存储技术有限公司",
     education: [
       {
         degree: "博士学位",
@@ -1465,7 +1465,7 @@ export const mockTeamMembers: TeamMember[] = [
     bio: "硕士毕业生（学术）",
     joinYear: 2023,
     graduationYear: 2026,
-    currentPosition: "东北大学（波士顿）攻读博士",
+    currentPosition: "东北大学（波士顿）",
     education: [
       {
         degree: "硕士学位（学术）",
@@ -1490,7 +1490,7 @@ export const mockTeamMembers: TeamMember[] = [
     bio: "硕士毕业生（学术）",
     joinYear: 2023,
     graduationYear: 2026,
-    currentPosition: "长鑫存储",
+    currentPosition: "长鑫存储技术有限公司",
     education: [
       {
         degree: "硕士学位（学术）",
@@ -1515,7 +1515,7 @@ export const mockTeamMembers: TeamMember[] = [
     bio: "硕士毕业生（学术）",
     joinYear: 2023,
     graduationYear: 2026,
-    currentPosition: "港中深经管学院读博",
+    currentPosition: "香港中文大学（深圳）经管学院",
     education: [
       {
         degree: "硕士学位（学术）",
@@ -1540,7 +1540,7 @@ export const mockTeamMembers: TeamMember[] = [
     bio: "硕士毕业生（工程）",
     joinYear: 2023,
     graduationYear: 2026,
-    currentPosition: "江苏省选调生",
+    currentPosition: "江苏省选调",
     education: [
       {
         degree: "硕士学位（工程）",
@@ -1638,7 +1638,7 @@ export const mockTeamMembers: TeamMember[] = [
     bio: "硕士毕业生（工程）",
     joinYear: 2022,
     graduationYear: 2025,
-    currentPosition: "香港科技大学IDEA系读博",
+    currentPosition: "香港科技大学",
     education: [
       {
         degree: "硕士学位（工程）",
@@ -1853,7 +1853,7 @@ export const mockTeamMembers: TeamMember[] = [
     bio: "硕士毕业生（学术）",
     joinYear: 2018,
     graduationYear: 2021,
-    currentPosition: "香港科技大学博士生",
+    currentPosition: "香港科技大学",
     education: [
       {
         degree: "硕士学位（学术）",
