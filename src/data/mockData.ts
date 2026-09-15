@@ -1515,7 +1515,7 @@ export const mockTeamMembers: TeamMember[] = [
     bio: "硕士毕业生（学术）",
     joinYear: 2023,
     graduationYear: 2026,
-    currentPosition: "香港中文大学（深圳）经管学院",
+    currentPosition: "香港中文大学（深圳）",
     education: [
       {
         degree: "硕士学位（学术）",
