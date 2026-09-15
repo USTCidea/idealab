@@ -3516,6 +3516,18 @@ export const mockTimeline: NewsItem[] = [
 // 新闻动态数据（包含多种类型）
 export const mockNews: NewsItem[] = [
   {
+    id: "news32",
+    title: "祝贺实验室十位2026届毕业生顺利毕业",
+    category: "personnel",
+    content:
+      "2026年，实验室十位同学顺利毕业，开启人生新篇章。\n\n博士毕业生：卢蔚乾、刘许成、汪勐航、徐宽。\n\n硕士毕业生：陈龙、郭朝阳、许仁静、张耀太、许璟钊、肖涵菲。\n\n衷心祝贺十位毕业生，祝愿大家在新的学习和工作岗位上前程似锦、再创佳绩！",
+    publishDate: "2026-09-15",
+    status: "published",
+    featured: true,
+    tags: ["人员动态", "毕业生", "2026届"],
+    author: "实验室办公室",
+  },
+  {
     id: "news31",
     title: "祝贺张勋老师论文被MS，IJOC各接收一篇",
     category: "achievement",
