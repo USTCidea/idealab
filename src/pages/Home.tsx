@@ -23,7 +23,7 @@ const Home: React.FC = () => {
               <h2 className="text-xl md:text-2xl mb-8 text-blue-100 text-center">
                 Laboratory for Intelligent Decision-making with Emerging Algorithms
               </h2>
-              <p className="text-lg mb-4 text-white leading-relaxed max-w-5xl">
+              <p className="text-lg mb-4 text-white leading-relaxed max-w-5xl mx-auto text-left">
               安徽省哲学社会科学重点实验室，主要运用机器学习、优化理论与方法、博弈论等人工智能和运筹管理等学科中的方法，通过数据分析、数学建模、模型解析、实验仿真的范式，对交通物流、生产制造、公共资源管理、应急管理等场景中的决策与博弈问题进行研究。实验室的研究工作得到了中国科学院、中国科学技术大学、国家自然科学基金委、安徽省教育厅，以及芯片制造、汽车制造、国家电网等中国龙头企业的资助。
               </p>
             </div>
