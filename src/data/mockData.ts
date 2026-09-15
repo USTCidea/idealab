@@ -1895,14 +1895,14 @@ export const mockTeamMembers: TeamMember[] = [
 const facultyDisplayOrder = [
   "刘林冬",
   "李宜福",
-  "逯兰",
-  "朱龑",
   "杜建忠",
-  "王德瑞",
-  "卢文涛",
-  "张勋",
   "刘文倩",
+  "卢文涛",
+  "逯兰",
+  "王德瑞",
   "于成成",
+  "张勋",
+  "朱龑",
 ];
 
 export const getFacultyMembers = () =>
