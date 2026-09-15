@@ -89,8 +89,8 @@ const Team: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             团队信息
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            团队由经验丰富的导师和充满活力的学生组成， 专注于优化理论与智能决策算法前沿研究
+          <p className="text-lg md:text-xl text-gray-600 mx-auto leading-relaxed whitespace-nowrap">
+            团队由经验丰富的导师和充满活力的学生组成，专注于优化理论与智能决策算法前沿研究
           </p>
         </div>
 
