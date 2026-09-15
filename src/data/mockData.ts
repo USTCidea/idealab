@@ -148,7 +148,7 @@ export const mockTeamMembers: TeamMember[] = [
       "智慧城市运营管理",
       "分布式鲁棒优化",
     ],
-    bio: "特任副教授，研究生导师，专注于智慧城市运营管理研究，在鲁棒优化等领域有重要贡献。",
+    bio: "特任副教授，研究生导师，专注于智慧城市运营管理研究，在分布式鲁棒优化等领域有重要贡献。",
     education: [
       {
         degree: "博士学位",
@@ -296,7 +296,7 @@ export const mockTeamMembers: TeamMember[] = [
     email: "dujianzhong@ustc.edu.cn",
     website: "https://bs.ustc.edu.cn/chinese/profile-2322.html",
     researchInterests: ["仿真优化及其应用"],
-    bio: "特任副教授，专注于仿真优化及其应用研究，在随机优化与仿真建模等领域有重要贡献。",
+    bio: "特任副教授，专注于仿真优化及其应用研究，在随机优化、仿真建模及相关应用等领域有重要贡献。",
     education: [
       {
         degree: "博士学位",
@@ -348,7 +348,7 @@ export const mockTeamMembers: TeamMember[] = [
     email: "wenqian_liu@swjtu.edu.cn",
     website: "https://faculty.swjtu.edu.cn/liuwenqian1/zh_CN/index.htm",
     researchInterests: ["低空物流", "智慧调度"],
-    bio: "助理教授，专注于低空物流与智慧调度研究，在无人机协同配送等领域有重要贡献。",
+    bio: "助理教授，专注于低空物流与智慧调度研究，在低空物流和无人机协同配送等领域有重要贡献。",
     education: [
       {
         degree: "博士学位",
