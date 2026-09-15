@@ -186,7 +186,7 @@ export const mockTeamMembers: TeamMember[] = [
     name: "朱龑",
     nameEn: "Yan Zhu",
     role: "faculty",
-    title: "特任副研究员",
+    title: "特任副教授",
     supervisorType: "研究生导师",
     avatar: "/images/avatars/zhu.jpg",
     email: "yanzhu@ustc.edu.cn",
@@ -195,7 +195,7 @@ export const mockTeamMembers: TeamMember[] = [
       "预约调度",
       "动态规划",
     ],
-    bio: "特任副研究员，研究生导师，专注于预约调度与资源规划研究，在动态规划等领域有重要贡献。",
+    bio: "特任副教授，研究生导师，专注于预约调度与资源规划研究，在动态规划等领域有重要贡献。",
     education: [
       {
         degree: "博士学位",
@@ -1891,6 +1891,24 @@ export const mockTeamMembers: TeamMember[] = [
     publications: [],
   },
 ];
+
+const facultyDisplayOrder = [
+  "刘林冬",
+  "李宜福",
+  "逯兰",
+  "朱龑",
+  "杜建忠",
+  "王德瑞",
+  "卢文涛",
+  "张勋",
+  "刘文倩",
+  "于成成",
+];
+
+export const getFacultyMembers = () =>
+  facultyDisplayOrder
+    .map((name) => mockTeamMembers.find((member) => member.name === name))
+    .filter((member): member is TeamMember => Boolean(member));
 
 // 论文数据
 export const mockPublications: Publication[] = [

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Container from "../components/layout/Container";
 import { MemberCard } from "../components/ui";
-import { mockTeamMembers } from "../data/mockData";
+import { getFacultyMembers, mockTeamMembers } from "../data/mockData";
 import type { TeamMember } from "../types";
 
 const isAlumniPhd = (member: TeamMember) =>
@@ -43,11 +43,13 @@ const Team: React.FC = () => {
             (m) => m.role === "alumni" || m.role === "postdoc"
           )
         )
+      : selectedRole === "faculty"
+      ? getFacultyMembers()
       : mockTeamMembers.filter((member) => member.role === selectedRole);
 
   // 按角色分组显示，将硕士生分为学硕和专硕
   const membersByRole = {
-    faculty: mockTeamMembers.filter((m) => m.role === "faculty"),
+    faculty: getFacultyMembers(),
     postdoc: mockTeamMembers.filter((m) => m.role === "postdoc"),
     phd: mockTeamMembers.filter((m) => m.role === "phd"),
     academic_master: mockTeamMembers.filter(

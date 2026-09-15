@@ -7,7 +7,7 @@ import {
   NewsCard,
   PublicationCard,
 } from "../components/ui";
-import { mockTeamMembers, mockNews, mockPublications } from "../data/mockData";
+import { getFacultyMembers, mockNews, mockPublications } from "../data/mockData";
 
 const Home: React.FC = () => {
   return (
@@ -49,7 +49,7 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
             {/* 显示所有老师 */}
-            {mockTeamMembers.filter((member) => member.role === "faculty").map((member) => (
+            {getFacultyMembers().map((member) => (
               <MemberCard key={member.id} member={member} />
             ))}
           </div>
