@@ -3892,6 +3892,15 @@ export const mockProjects: Project[] = [
 // 团队风采页面数据
 export const mockGalleryImages = [
   {
+    id: "23",
+    url: "/images/gallery/20260910-teachers-day.jpg",
+    thumbnail: "/images/gallery/20260910-teachers-day.jpg",
+    title: "实验室集体庆祝教师节",
+    category: "daily" as const,
+    date: "2026-09-10",
+    tags: ["教师节", "团队活动"],
+  },
+  {
     id: "1",
     url: "/images/gallery/20240913131339.jpg",
     thumbnail: "/images/gallery/20240913131339.jpg",
