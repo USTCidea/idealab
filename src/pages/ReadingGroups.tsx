@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { BookOpenIcon, CalendarDaysIcon, MapPinIcon, UserGroupIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowTopRightOnSquareIcon,
+  BookOpenIcon,
+  CalendarDaysIcon,
+  DocumentTextIcon,
+  MapPinIcon,
+  UserGroupIcon,
+} from "@heroicons/react/24/outline";
 import Container from "../components/layout/Container";
 import { readingGroups, readingActivities, getActivityStatus } from "../data/readingGroups";
 import type { ReadingActivity } from "../data/readingGroups";
@@ -9,6 +16,9 @@ const dateFormat = new Intl.DateTimeFormat("zh-CN", {
 });
 const timeFormat = new Intl.DateTimeFormat("zh-CN", {
   timeZone: "Asia/Shanghai", hour: "2-digit", minute: "2-digit", hour12: false,
+});
+const shortDateFormat = new Intl.DateTimeFormat("zh-CN", {
+  timeZone: "Asia/Shanghai", year: "numeric", month: "long", day: "numeric",
 });
 
 function activityTime(activity: ReadingActivity) {
@@ -46,6 +56,41 @@ function ActivityCard({ activity, now }: { activity: ReadingActivity; now: numbe
           {activity.slidesUrl && <a href={activity.slidesUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">分享资料 ↗</a>}
         </div>
       )}
+    </article>
+  );
+}
+
+function DiscussionPaperCard({ activity }: { activity: ReadingActivity }) {
+  const group = readingGroups.find((item) => item.id === activity.groupId);
+  return (
+    <article className="group flex h-full flex-col rounded-lg border border-gray-200 bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg sm:p-7">
+      <div className="mb-5 flex items-center justify-between gap-4">
+        <span className="rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-800">{group?.name}</span>
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-50 to-blue-100">
+          <DocumentTextIcon className="h-6 w-6 text-blue-700" aria-hidden="true" />
+        </div>
+      </div>
+      <h3 className="mb-3 break-words text-lg font-semibold leading-relaxed text-gray-900 transition-colors group-hover:text-blue-800">
+        {activity.paperTitle}
+      </h3>
+      {activity.paperAuthors && <p className="mb-2 text-sm leading-relaxed text-gray-600">作者：{activity.paperAuthors}</p>}
+      {activity.paperVenue && <p className="text-sm font-medium leading-relaxed text-gray-600">{activity.paperVenue}</p>}
+      <dl className="mt-5 grid grid-cols-2 gap-4 border-t border-gray-100 pt-4 text-sm">
+        <div><dt className="text-gray-500">汇报人</dt><dd className="mt-1 text-gray-800">{activity.presenters.join("、")}</dd></div>
+        <div><dt className="text-gray-500">讨论日期</dt><dd className="mt-1 text-gray-800">{shortDateFormat.format(new Date(activity.startsAt))}</dd></div>
+      </dl>
+      <div className="mt-auto flex flex-wrap gap-4 pt-5 text-sm font-medium">
+        {activity.paperPdfUrl && (
+          <a href={activity.paperPdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900">
+            <DocumentTextIcon className="h-4 w-4" aria-hidden="true" />PDF
+          </a>
+        )}
+        {activity.paperDoi && (
+          <a href={`https://doi.org/${activity.paperDoi}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900">
+            <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />DOI
+          </a>
+        )}
+      </div>
     </article>
   );
 }
@@ -94,6 +139,21 @@ export default function ReadingGroups() {
                 </div>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="discussion-papers-title" className="mb-12">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h2 id="discussion-papers-title" className="text-2xl font-bold">讨论班论文</h2>
+              <p className="mt-2 text-base text-gray-500">汇集各阅读小组讨论过的论文，保留全文与 DOI 信息，便于后续查阅和延伸阅读。</p>
+            </div>
+            <span className="text-sm text-gray-500">共 {readingActivities.length} 篇</span>
+          </div>
+          <div className="grid gap-5 lg:grid-cols-2">
+            {[...readingActivities]
+              .sort((a, b) => Date.parse(b.startsAt) - Date.parse(a.startsAt))
+              .map((activity) => <DiscussionPaperCard key={activity.id} activity={activity} />)}
           </div>
         </section>
 

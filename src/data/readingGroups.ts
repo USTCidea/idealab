@@ -16,6 +16,8 @@ export interface ReadingActivity {
   paperTitle: string;
   paperAuthors?: string;
   paperVenue?: string;
+  paperDoi?: string;
+  paperPdfUrl?: string;
   paperUrl?: string;
   slidesUrl?: string;
   summary?: string;
@@ -85,6 +87,9 @@ export const readingActivities: ReadingActivity[] = [
     location: "管科楼219",
     presenters: ["吴子翔"],
     paperTitle: "Capacity sharing and cost allocation among independent firms with congestion",
+    paperAuthors: "Yimin Yu, Saif Benjaafar, Yigal Gerchak",
+    paperVenue: "Production and Operations Management, 2015",
+    paperDoi: "10.1111/poms.12322",
   },
   {
     id: "group-3-20260911-01",
@@ -93,6 +98,10 @@ export const readingActivities: ReadingActivity[] = [
     location: "管科楼105",
     presenters: ["李昊洋"],
     paperTitle: "Menu Pricing of Large Language Models",
+    paperAuthors: "Dirk Bergemann, Alessandro Bonatti, Alex Smolin",
+    paperVenue: "Cowles Foundation Discussion Paper No. 2502, 2026",
+    paperDoi: "10.48550/arXiv.2502.07736",
+    paperPdfUrl: "https://cowles.yale.edu/sites/default/files/2026-03/d2502.pdf",
   },
   {
     id: "group-2-20260913-01",
@@ -101,6 +110,10 @@ export const readingActivities: ReadingActivity[] = [
     location: "管科楼107",
     presenters: ["李淑宇"],
     paperTitle: "Learning Memory-Enhanced Improvement Heuristics for Flexible Job Shop Scheduling",
+    paperAuthors: "Jiaqi Wang, Zhiguang Cao, Peng Zhao, Rui Cao, Yubin Xiao, Yuan Jiang, You Zhou",
+    paperVenue: "NeurIPS 2025",
+    paperDoi: "10.52202/085713-2776",
+    paperPdfUrl: "https://papers.neurips.cc/paper_files/paper/2025/file/77629f2df5ef97ad967157c69cd8af7b-Paper-Conference.pdf",
   },
   {
     id: "group-2-20260913-02",
@@ -109,6 +122,9 @@ export const readingActivities: ReadingActivity[] = [
     location: "管科楼107",
     presenters: ["陈郅奥"],
     paperTitle: "Automated Scheduling Heuristic Generation and Evaluation via Large Language Model",
+    paperAuthors: "Fei Yu, Liang Gao, Xinyu Li, Chao Lu, Qihao Liu",
+    paperVenue: "IEEE Transactions on Evolutionary Computation, 2026",
+    paperDoi: "10.1109/TEVC.2026.3655772",
   },
 ];
 
