@@ -17,10 +17,6 @@ const dateFormat = new Intl.DateTimeFormat("zh-CN", {
 const timeFormat = new Intl.DateTimeFormat("zh-CN", {
   timeZone: "Asia/Shanghai", hour: "2-digit", minute: "2-digit", hour12: false,
 });
-const shortDateFormat = new Intl.DateTimeFormat("zh-CN", {
-  timeZone: "Asia/Shanghai", year: "numeric", month: "long", day: "numeric",
-});
-
 function activityTime(activity: ReadingActivity) {
   const start = new Date(activity.startsAt);
   if (!activity.endsAt) return `${dateFormat.format(start)} ${timeFormat.format(start)} 开始`;
@@ -60,36 +56,31 @@ function ActivityCard({ activity, now }: { activity: ReadingActivity; now: numbe
   );
 }
 
-function DiscussionPaperCard({ activity }: { activity: ReadingActivity }) {
-  const group = readingGroups.find((item) => item.id === activity.groupId);
+function DiscussionPaperRow({ activity, index }: { activity: ReadingActivity; index: number }) {
   return (
-    <article className="group flex h-full flex-col rounded-lg border border-gray-200 bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg sm:p-7">
-      <div className="mb-5 flex items-center justify-between gap-4">
-        <span className="rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-800">{group?.name}</span>
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-50 to-blue-100">
-          <DocumentTextIcon className="h-6 w-6 text-blue-700" aria-hidden="true" />
+    <article className="group flex gap-4 px-5 py-5 transition-colors hover:bg-blue-50/40 sm:px-7">
+      <span className="pt-0.5 text-sm font-semibold tabular-nums text-blue-300" aria-hidden="true">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <div className="min-w-0 flex-1">
+        <h3 className="break-words text-base font-semibold leading-relaxed text-gray-900 transition-colors group-hover:text-blue-800 sm:text-lg">
+          {activity.paperTitle}
+        </h3>
+        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+          {activity.paperDoi && <span className="break-all text-gray-500">DOI: {activity.paperDoi}</span>}
+          <div className="flex items-center gap-4 font-medium">
+            {activity.paperPdfUrl && (
+              <a href={activity.paperPdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900">
+                <DocumentTextIcon className="h-4 w-4" aria-hidden="true" />PDF
+              </a>
+            )}
+            {activity.paperDoi && (
+              <a href={`https://doi.org/${activity.paperDoi}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900">
+                <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />DOI链接
+              </a>
+            )}
+          </div>
         </div>
-      </div>
-      <h3 className="mb-3 break-words text-lg font-semibold leading-relaxed text-gray-900 transition-colors group-hover:text-blue-800">
-        {activity.paperTitle}
-      </h3>
-      {activity.paperAuthors && <p className="mb-2 text-sm leading-relaxed text-gray-600">作者：{activity.paperAuthors}</p>}
-      {activity.paperVenue && <p className="text-sm font-medium leading-relaxed text-gray-600">{activity.paperVenue}</p>}
-      <dl className="mt-5 grid grid-cols-2 gap-4 border-t border-gray-100 pt-4 text-sm">
-        <div><dt className="text-gray-500">汇报人</dt><dd className="mt-1 text-gray-800">{activity.presenters.join("、")}</dd></div>
-        <div><dt className="text-gray-500">讨论日期</dt><dd className="mt-1 text-gray-800">{shortDateFormat.format(new Date(activity.startsAt))}</dd></div>
-      </dl>
-      <div className="mt-auto flex flex-wrap gap-4 pt-5 text-sm font-medium">
-        {activity.paperPdfUrl && (
-          <a href={activity.paperPdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900">
-            <DocumentTextIcon className="h-4 w-4" aria-hidden="true" />PDF
-          </a>
-        )}
-        {activity.paperDoi && (
-          <a href={`https://doi.org/${activity.paperDoi}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900">
-            <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />DOI
-          </a>
-        )}
       </div>
     </article>
   );
@@ -150,10 +141,10 @@ export default function ReadingGroups() {
             </div>
             <span className="text-sm text-gray-500">共 {readingActivities.length} 篇</span>
           </div>
-          <div className="grid gap-5 lg:grid-cols-2">
+          <div className="divide-y divide-gray-100 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
             {[...readingActivities]
               .sort((a, b) => Date.parse(b.startsAt) - Date.parse(a.startsAt))
-              .map((activity) => <DiscussionPaperCard key={activity.id} activity={activity} />)}
+              .map((activity, index) => <DiscussionPaperRow key={activity.id} activity={activity} index={index} />)}
           </div>
         </section>
 
