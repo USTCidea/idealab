@@ -90,6 +90,7 @@ export const readingActivities: ReadingActivity[] = [
     paperAuthors: "Yimin Yu, Saif Benjaafar, Yigal Gerchak",
     paperVenue: "Production and Operations Management, 2015",
     paperDoi: "10.1111/poms.12322",
+    paperPdfUrl: "reading-papers/capacity-sharing-and-cost-allocation.pdf",
   },
   {
     id: "group-3-20260911-01",
@@ -125,6 +126,7 @@ export const readingActivities: ReadingActivity[] = [
     paperAuthors: "Fei Yu, Liang Gao, Xinyu Li, Chao Lu, Qihao Liu",
     paperVenue: "IEEE Transactions on Evolutionary Computation, 2026",
     paperDoi: "10.1109/TEVC.2026.3655772",
+    paperPdfUrl: "reading-papers/automated-scheduling-heuristic-generation.pdf",
   },
 ];
 
