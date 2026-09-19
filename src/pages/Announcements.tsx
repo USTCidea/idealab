@@ -1,10 +1,10 @@
 import React from "react";
 import Container from "../components/layout/Container";
-import { mockTimeline } from "../data/mockData";
+import { mockNews } from "../data/mockData";
 
 const Announcements: React.FC = () => {
   // Sort news by date (newest first)
-  const sortedNews = [...mockTimeline].sort((a, b) => {
+  const sortedNews = [...mockNews].sort((a, b) => {
     return (
       new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
     );
