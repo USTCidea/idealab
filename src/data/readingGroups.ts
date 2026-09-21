@@ -21,6 +21,19 @@ export interface ReadingActivity {
   paperUrl?: string;
   slidesUrl?: string;
   summary?: string;
+  eventTitle?: string;
+  timeTbd?: boolean;
+  presentations?: ReadingPresentation[];
+}
+
+export interface ReadingPresentation {
+  presenter: string;
+  paperTitle: string;
+  paperAuthors?: string;
+  paperVenue?: string;
+  paperDoi?: string;
+  paperPdfUrl?: string;
+  paperUrl?: string;
 }
 
 // 在这里维护组名、指导老师和成员；未提供的名单保持为空。
@@ -80,6 +93,27 @@ export const readingDiscussionQuestions = [
 
 // 每次活动新增一条记录，保留旧记录。填写示例见 READING_GROUPS.md。
 export const readingActivities: ReadingActivity[] = [
+  {
+    id: "group-4-20260919-01",
+    groupId: "group-4",
+    startsAt: "2026-09-19T00:00:00+08:00",
+    timeTbd: true,
+    location: "腾讯会议 710-2973-6895（密码：513513）",
+    presenters: ["孙钰清", "郑永胜"],
+    eventTitle: "运营管理阅读小组论文分享",
+    paperTitle: "运营管理阅读小组论文分享",
+    presentations: [
+      {
+        presenter: "孙钰清",
+        paperTitle:
+          "A Monotone Approximate Dynamic Programming Approach for the Stochastic Scheduling, Allocation, and Inventory Replenishment Problem: Applications to Drone and Electric Vehicle Battery Swap Stations",
+      },
+      {
+        presenter: "郑永胜",
+        paperTitle: "Choice Screen Auctions",
+      },
+    ],
+  },
   {
     id: "group-1-20260911-01",
     groupId: "group-1",
