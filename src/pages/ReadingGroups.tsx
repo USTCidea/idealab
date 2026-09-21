@@ -37,8 +37,8 @@ function ActivityCard({ activity, now }: { activity: ReadingActivity; now: numbe
           {status === "past" ? "往期活动" : status === "ongoing" ? "进行中" : status === "today" ? "当日活动" : "即将开展"}
         </span>
       </div>
-      <h3 className="mb-3 break-words text-xl font-semibold leading-relaxed text-gray-900">{activity.eventTitle || activity.paperTitle}</h3>
-      {!activity.presentations && (activity.paperAuthors || activity.paperVenue) && (
+      <h3 className="mb-3 break-words text-xl font-semibold leading-relaxed text-gray-900">{activity.paperTitle}</h3>
+      {(activity.paperAuthors || activity.paperVenue) && (
         <p className="text-sm text-gray-500">{[activity.paperAuthors, activity.paperVenue].filter(Boolean).join(" · ")}</p>
       )}
       <dl className="mt-5 grid gap-4 text-base text-gray-700 sm:grid-cols-2">
@@ -46,16 +46,6 @@ function ActivityCard({ activity, now }: { activity: ReadingActivity; now: numbe
         <div><dt className="mb-1 flex items-center gap-1 text-sm text-gray-500"><MapPinIcon className="h-4 w-4" aria-hidden="true" />活动地点</dt><dd className="break-words">{activity.location}</dd></div>
         <div className="sm:col-span-2"><dt className="mb-1 flex items-center gap-1 text-sm text-gray-500"><CalendarDaysIcon className="h-4 w-4" aria-hidden="true" />活动时间（北京时间）</dt><dd>{activityTime(activity)}</dd></div>
       </dl>
-      {activity.presentations && (
-        <div className="mt-6 space-y-4 border-t border-gray-100 pt-5">
-          {activity.presentations.map((presentation, index) => (
-            <div key={`${presentation.presenter}-${presentation.paperTitle}`} className="grid gap-1.5 sm:grid-cols-[6rem_1fr] sm:gap-4">
-              <p className="text-sm font-medium text-blue-800">汇报人{index + 1}：{presentation.presenter}</p>
-              <p className="break-words text-sm leading-6 text-gray-700">{presentation.paperTitle}</p>
-            </div>
-          ))}
-        </div>
-      )}
       {activity.summary && <p className="mt-5 whitespace-pre-line leading-relaxed text-gray-600">{activity.summary}</p>}
       {(activity.paperUrl || activity.slidesUrl) && (
         <div className="mt-6 flex flex-wrap gap-5 border-t border-gray-100 pt-4 text-sm font-medium">
@@ -67,19 +57,10 @@ function ActivityCard({ activity, now }: { activity: ReadingActivity; now: numbe
   );
 }
 
-interface DiscussionPaper {
-  id: string;
-  startsAt: string;
-  presenter?: string;
-  paperTitle: string;
-  paperDoi?: string;
-  paperPdfUrl?: string;
-}
-
-function DiscussionPaperRow({ paper, index }: { paper: DiscussionPaper; index: number }) {
-  const pdfHref = paper.paperPdfUrl?.startsWith("http")
-    ? paper.paperPdfUrl
-    : paper.paperPdfUrl ? `${import.meta.env.BASE_URL}${paper.paperPdfUrl}` : undefined;
+function DiscussionPaperRow({ activity, index }: { activity: ReadingActivity; index: number }) {
+  const pdfHref = activity.paperPdfUrl?.startsWith("http")
+    ? activity.paperPdfUrl
+    : activity.paperPdfUrl ? `${import.meta.env.BASE_URL}${activity.paperPdfUrl}` : undefined;
   return (
     <article className="group flex gap-4 px-5 py-5 transition-colors hover:bg-blue-50/40 sm:px-7">
       <span className="pt-0.5 text-sm font-semibold tabular-nums text-blue-300" aria-hidden="true">
@@ -87,19 +68,18 @@ function DiscussionPaperRow({ paper, index }: { paper: DiscussionPaper; index: n
       </span>
       <div className="min-w-0 flex-1">
         <h3 className="break-words text-base font-semibold leading-relaxed text-gray-900 transition-colors group-hover:text-blue-800 sm:text-lg">
-          {paper.paperTitle}
+          {activity.paperTitle}
         </h3>
         <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-          {paper.presenter && <span className="text-gray-500">分享人：{paper.presenter}</span>}
-          {paper.paperDoi && <span className="break-all text-gray-500">DOI: {paper.paperDoi}</span>}
+          {activity.paperDoi && <span className="break-all text-gray-500">DOI: {activity.paperDoi}</span>}
           <div className="flex items-center gap-4 font-medium">
             {pdfHref && (
               <a href={pdfHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900">
                 <DocumentTextIcon className="h-4 w-4" aria-hidden="true" />PDF
               </a>
             )}
-            {paper.paperDoi && (
-              <a href={`https://doi.org/${paper.paperDoi}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900">
+            {activity.paperDoi && (
+              <a href={`https://doi.org/${activity.paperDoi}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900">
                 <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />DOI链接
               </a>
             )}
@@ -122,25 +102,6 @@ export default function ReadingGroups() {
     .sort((a, b) => Date.parse(a.startsAt) - Date.parse(b.startsAt));
   const past = activities.filter((item) => getActivityStatus(item, now) === "past")
     .sort((a, b) => Date.parse(b.startsAt) - Date.parse(a.startsAt));
-  const discussionPapers: DiscussionPaper[] = readingActivities.flatMap((activity) =>
-    activity.presentations?.length
-      ? activity.presentations.map((presentation, index) => ({
-          id: `${activity.id}-paper-${index + 1}`,
-          startsAt: activity.startsAt,
-          presenter: presentation.presenter,
-          paperTitle: presentation.paperTitle,
-          paperDoi: presentation.paperDoi,
-          paperPdfUrl: presentation.paperPdfUrl,
-        }))
-      : [{
-          id: activity.id,
-          startsAt: activity.startsAt,
-          presenter: activity.presenters.join("、"),
-          paperTitle: activity.paperTitle,
-          paperDoi: activity.paperDoi,
-          paperPdfUrl: activity.paperPdfUrl,
-        }],
-  );
 
   return (
     <div className="py-16">
@@ -182,12 +143,12 @@ export default function ReadingGroups() {
               <h2 id="discussion-papers-title" className="text-2xl font-bold">讨论班论文</h2>
               <p className="mt-2 text-base text-gray-500">汇集各阅读小组讨论过的论文，保留全文与 DOI 信息，便于后续查阅和延伸阅读。</p>
             </div>
-            <span className="text-sm text-gray-500">共 {discussionPapers.length} 篇</span>
+            <span className="text-sm text-gray-500">共 {readingActivities.length} 篇</span>
           </div>
           <div className="divide-y divide-gray-100 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
-            {[...discussionPapers]
+            {[...readingActivities]
               .sort((a, b) => Date.parse(b.startsAt) - Date.parse(a.startsAt))
-              .map((paper, index) => <DiscussionPaperRow key={paper.id} paper={paper} index={index} />)}
+              .map((activity, index) => <DiscussionPaperRow key={activity.id} activity={activity} index={index} />)}
           </div>
         </section>
 
