@@ -83,6 +83,24 @@ export const readingDiscussionQuestions = [
 // 每次活动新增一条记录，保留旧记录。填写示例见 READING_GROUPS.md。
 export const readingActivities: ReadingActivity[] = [
   {
+    id: "group-4-20260905-01",
+    groupId: "group-4",
+    startsAt: "2026-09-05T09:00:00+08:00",
+    location: "腾讯会议",
+    presenters: ["吴天阳"],
+    paperTitle:
+      "Offering memories to sell goods? Pricing and welfare implications of experiential retail",
+  },
+  {
+    id: "group-4-20260905-02",
+    groupId: "group-4",
+    startsAt: "2026-09-05T09:00:00+08:00",
+    location: "腾讯会议",
+    presenters: ["赵俊喆"],
+    paperTitle:
+      "Certificate Trading in the Aviation Fuel Supply Chain under SAF Mandates",
+  },
+  {
     id: "group-3-20260923-01",
     groupId: "group-3",
     startsAt: "2026-09-23T19:00:00+08:00",
