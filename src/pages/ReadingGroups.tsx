@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import {
-  ArrowTopRightOnSquareIcon,
   BookOpenIcon,
   CalendarDaysIcon,
-  DocumentTextIcon,
   MapPinIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
@@ -58,9 +56,6 @@ function ActivityCard({ activity, now }: { activity: ReadingActivity; now: numbe
 }
 
 function DiscussionPaperRow({ activity, index }: { activity: ReadingActivity; index: number }) {
-  const pdfHref = activity.paperPdfUrl?.startsWith("http")
-    ? activity.paperPdfUrl
-    : activity.paperPdfUrl ? `${import.meta.env.BASE_URL}${activity.paperPdfUrl}` : undefined;
   return (
     <article className="group flex gap-4 px-5 py-5 transition-colors hover:bg-blue-50/40 sm:px-7">
       <span className="pt-0.5 text-sm font-semibold tabular-nums text-blue-300" aria-hidden="true">
@@ -70,21 +65,6 @@ function DiscussionPaperRow({ activity, index }: { activity: ReadingActivity; in
         <h3 className="break-words text-base font-semibold leading-relaxed text-gray-900 transition-colors group-hover:text-blue-800 sm:text-lg">
           {activity.paperTitle}
         </h3>
-        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-          {activity.paperDoi && <span className="break-all text-gray-500">DOI: {activity.paperDoi}</span>}
-          <div className="flex items-center gap-4 font-medium">
-            {pdfHref && (
-              <a href={pdfHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900">
-                <DocumentTextIcon className="h-4 w-4" aria-hidden="true" />PDF
-              </a>
-            )}
-            {activity.paperDoi && (
-              <a href={`https://doi.org/${activity.paperDoi}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900">
-                <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />DOI链接
-              </a>
-            )}
-          </div>
-        </div>
       </div>
     </article>
   );

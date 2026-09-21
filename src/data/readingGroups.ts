@@ -83,11 +83,20 @@ export const readingDiscussionQuestions = [
 // 每次活动新增一条记录，保留旧记录。填写示例见 READING_GROUPS.md。
 export const readingActivities: ReadingActivity[] = [
   {
+    id: "group-3-20260923-01",
+    groupId: "group-3",
+    startsAt: "2026-09-23T19:00:00+08:00",
+    location: "管科楼105",
+    presenters: ["徐光辉"],
+    paperTitle:
+      "Data-Driven Stochastic Vehicle Routing Problems with Deadlines Under Decision-Dependent Travel Time",
+  },
+  {
     id: "group-4-20260919-01",
     groupId: "group-4",
     startsAt: "2026-09-19T00:00:00+08:00",
     timeTbd: true,
-    location: "腾讯会议 710-2973-6895",
+    location: "腾讯会议",
     presenters: ["孙钰清"],
     paperTitle:
       "A Monotone Approximate Dynamic Programming Approach for the Stochastic Scheduling, Allocation, and Inventory Replenishment Problem: Applications to Drone and Electric Vehicle Battery Swap Stations",
@@ -97,7 +106,7 @@ export const readingActivities: ReadingActivity[] = [
     groupId: "group-4",
     startsAt: "2026-09-19T00:00:00+08:00",
     timeTbd: true,
-    location: "腾讯会议 710-2973-6895",
+    location: "腾讯会议",
     presenters: ["郑永胜"],
     paperTitle: "Choice Screen Auctions",
   },
