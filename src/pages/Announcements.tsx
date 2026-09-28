@@ -327,10 +327,13 @@ const Announcements: React.FC = () => {
                       <div className="grid min-w-[1180px] grid-cols-10 divide-x divide-gray-200">
                         {monthlyMeetings.map((column) => (
                           <div key={column.period} className="bg-white">
-                            <div className="bg-primary-900 px-3 py-3 text-center text-sm font-bold tracking-wide text-white">
+                            <div
+                              className="border-b border-[#00357f] px-3 py-3 text-center text-sm font-bold tracking-wide text-white"
+                              style={{ backgroundColor: "#00409c" }}
+                            >
                               {column.period}
                             </div>
-                            <div className="min-h-[4.75rem] border-b border-gray-200 bg-primary-50 px-2 py-2.5 text-center text-sm font-semibold leading-6 text-primary-900">
+                            <div className="min-h-[4.75rem] border-b border-gray-200 bg-[#eef5ff] px-2 py-2.5 text-center text-sm font-semibold leading-6 text-[#003b78]">
                               {column.group.map((group) => (
                                 <div key={group}>{group}</div>
                               ))}
