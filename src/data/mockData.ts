@@ -2526,6 +2526,20 @@ export const mockPublications: Publication[] = [
 // 学术讲座数据（仅包含talk类型）
 export const mockLectures: NewsItem[] = [
   {
+    id: "talk53",
+    title: "随机需求下考虑自有车队与外包承运商的车辆路径问题",
+    category: "talk",
+    content:
+      "英文题目：The Vehicle Routing Problem with Private Fleet, Common Carrier and Stochastic Demand\n\n报告摘要：\nThe Vehicle Routing Problem with Private Fleet and Common Carrier (VRPPC) is a generalization of the classical Vehicle Routing Problem in which the owner of a private fleet can either visit a customer with one of his vehicles or outsource the customer to a common carrier. The latter case occurs if the demand exceeds the total capacity of the private fleet or if it is more economically convenient to do so. The owner's objective is to minimize the variable and fixed costs for operating his fleet plus the total cost charged by the common carrier. This family of problems has many practical applications, particularly in the design of last-mile distribution services, and has received some attention in the literature. In this paper, we extend the VRPPC by considering stochastic demand. Especially, when the realized demand cannot be fully served, a provisional extra capacity is purchased at a higher fee to accommodate for excess demand. We model and solve the resulting problem as a two-stage stochastic program. We present two exact approaches: one is the classical branch-and-price algorithm, and the other is based on the Benders decomposition embedded in a branch-and-cut-and-price algorithm. Their performance is validated on extensive instances derived from the literature.\n\n报告人简介：\n张真真，同济大学经济与管理学院长聘教授、博士生导师。长期致力于大规模整数规划和不确定优化的理论研究与算法设计，以及在物流与运输规划、智能制造等方面的应用。目前已发表高质量论文30余篇，包括 Operations Research、INFORMS Journal on Computing、Transportation Science、Transportation Research Part B、NeurIPS 等，主持国家自然科学基金青年项目及优秀青年项目、上海市人才项目和华为、中远海运科研课题各1项，作为项目骨干参与创新研究群体和重点项目各1项。",
+    publishDate: "2026-09-29",
+    status: "published",
+    images: ["images/lectures/20260929-zhang-zhenzhen.jpg"],
+    tags: ["学术报告", "车辆路径问题", "随机需求", "运输规划"],
+    talkSpeaker: "张真真（同济大学经济与管理学院）",
+    talkTime: "2026-09-29 15:30",
+    talkLocation: "中国科大东区管理科研楼1018会议室",
+  },
+  {
     id: "talk1",
     title: "Online Resource Allocation with Limited Flexibility",
     category: "talk",

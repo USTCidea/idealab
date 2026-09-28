@@ -9,13 +9,13 @@ import {
 } from "@heroicons/react/24/outline";
 import Container from "../components/layout/Container";
 import { Button, Card } from "../components/ui";
-import { mockNews } from "../data/mockData";
+import { mockLectures, mockNews } from "../data/mockData";
 
 const NewsDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   // 根据ID查找新闻
-  const news = mockNews.find((n) => n.id === id);
+  const news = [...mockNews, ...mockLectures].find((n) => n.id === id);
 
   if (!news) {
     return (
@@ -72,17 +72,20 @@ const NewsDetail: React.FC = () => {
     return colorMap[category];
   };
 
+  const backPath = news.category === "talk" ? "/lectures" : "/news";
+  const backLabel = news.category === "talk" ? "返回讲座列表" : "返回新闻列表";
+
   return (
     <div className="py-16">
       <Container>
         {/* 返回按钮 */}
         <div className="mb-8">
           <Link
-            to="/news"
+            to={backPath}
             className="inline-flex items-center text-primary-600 hover:text-primary-700 transition-colors"
           >
             <ChevronLeftIcon className="h-5 w-5 mr-1" />
-            返回新闻列表
+            {backLabel}
           </Link>
         </div>
 
@@ -132,16 +135,24 @@ const NewsDetail: React.FC = () => {
           {/* 新闻图片 */}
           {news.images && news.images.length > 0 && (
             <div className="mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className={`grid grid-cols-1 gap-4 ${news.category === "talk" ? "" : "md:grid-cols-2"}`}>
                 {news.images.slice(0, 4).map((image, index) => (
                   <div
                     key={index}
-                    className="relative aspect-video bg-gray-100 rounded-lg overflow-hidden"
+                    className={
+                      news.category === "talk"
+                        ? "overflow-hidden rounded-lg border border-gray-200 bg-white p-2"
+                        : "relative aspect-video overflow-hidden rounded-lg bg-gray-100"
+                    }
                   >
                     <img
                       src={`${import.meta.env.BASE_URL}${image}`}
                       alt={`${news.title} - 图片 ${index + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      className={
+                        news.category === "talk"
+                          ? "mx-auto max-h-[72rem] w-auto max-w-full object-contain"
+                          : "h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                      }
                     />
                   </div>
                 ))}
@@ -182,11 +193,11 @@ const NewsDetail: React.FC = () => {
           <div className="border-t border-gray-200 pt-8">
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
               <Link
-                to="/news"
+                to={backPath}
                 className="inline-flex items-center text-primary-600 hover:text-primary-700 transition-colors"
               >
                 <ChevronLeftIcon className="h-4 w-4 mr-1" />
-                返回新闻列表
+                {backLabel}
               </Link>
 
               <div className="flex space-x-4">

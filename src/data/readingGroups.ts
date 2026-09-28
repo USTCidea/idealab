@@ -83,6 +83,24 @@ export const readingDiscussionQuestions = [
 // 每次活动新增一条记录，保留旧记录。填写示例见 READING_GROUPS.md。
 export const readingActivities: ReadingActivity[] = [
   {
+    id: "group-2-20260927-01",
+    groupId: "group-2",
+    startsAt: "2026-09-27T18:30:00+08:00",
+    location: "管科楼105",
+    presenters: ["段睿"],
+    paperTitle:
+      "From Contextual Data to Newsvendor Decisions: On the Actual Performance of Data-Driven Algorithms",
+  },
+  {
+    id: "group-2-20260927-02",
+    groupId: "group-2",
+    startsAt: "2026-09-27T18:30:00+08:00",
+    location: "管科楼105",
+    presenters: ["金柯"],
+    paperTitle:
+      "Learning in Lost-Sales Inventory Systems with Stochastic Lead Times and Random Supplies",
+  },
+  {
     id: "group-4-20260905-01",
     groupId: "group-4",
     startsAt: "2026-09-05T09:00:00+08:00",
