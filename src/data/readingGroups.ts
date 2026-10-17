@@ -83,6 +83,22 @@ export const readingDiscussionQuestions = [
 // 每次活动新增一条记录，保留旧记录。填写示例见 READING_GROUPS.md。
 export const readingActivities: ReadingActivity[] = [
   {
+    id: "group-4-20261010-01",
+    groupId: "group-4",
+    startsAt: "2026-10-10T09:00:00+08:00",
+    location: "腾讯会议",
+    presenters: ["张芳菲"],
+    paperTitle: "The k-Traveling Repairman Problem with Stochastic Service Request Times",
+  },
+  {
+    id: "group-4-20261010-02",
+    groupId: "group-4",
+    startsAt: "2026-10-10T09:00:00+08:00",
+    location: "腾讯会议",
+    presenters: ["李绪泰"],
+    paperTitle: "Optimal Incentives for Salespeople with Learning",
+  },
+  {
     id: "group-2-20260927-01",
     groupId: "group-2",
     startsAt: "2026-09-27T18:30:00+08:00",
