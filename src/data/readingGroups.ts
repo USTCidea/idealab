@@ -83,6 +83,22 @@ export const readingDiscussionQuestions = [
 // 每次活动新增一条记录，保留旧记录。填写示例见 READING_GROUPS.md。
 export const readingActivities: ReadingActivity[] = [
   {
+    id: "group-3-20261014-01",
+    groupId: "group-3",
+    startsAt: "2026-10-14T18:30:00+08:00",
+    location: "管科楼107",
+    presenters: ["李鉴岐"],
+    paperTitle: "Improving Human Sequential Decision Making with Reinforcement Learning",
+  },
+  {
+    id: "group-3-20261021-01",
+    groupId: "group-3",
+    startsAt: "2026-10-21T18:30:00+08:00",
+    location: "管科楼107",
+    presenters: ["仝宇"],
+    paperTitle: "Nurse Staffing Under Absenteeism: A Distributionally Robust Optimization Approach",
+  },
+  {
     id: "group-4-20261010-01",
     groupId: "group-4",
     startsAt: "2026-10-10T09:00:00+08:00",
