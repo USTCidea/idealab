@@ -83,6 +83,23 @@ export const readingDiscussionQuestions = [
 // 每次活动新增一条记录，保留旧记录。填写示例见 READING_GROUPS.md。
 export const readingActivities: ReadingActivity[] = [
   {
+    id: "group-2-20261019-01",
+    groupId: "group-2",
+    startsAt: "2026-10-19T18:30:00+08:00",
+    location: "管科楼一楼105研讨室（腾讯会议 710-2973-6895）",
+    presenters: ["林家祥"],
+    paperTitle: "Data-Driven Ranking and Selection Under Input Uncertainty",
+  },
+  {
+    id: "group-2-20261019-02",
+    groupId: "group-2",
+    startsAt: "2026-10-19T18:30:00+08:00",
+    location: "管科楼一楼105研讨室（腾讯会议 710-2973-6895）",
+    presenters: ["刘元辛"],
+    paperTitle:
+      "Two-Stage Learning to Branch in Branch-Price-and-Cut Algorithms for Solving Vehicle Routing Problems Exactly",
+  },
+  {
     id: "group-3-20261014-01",
     groupId: "group-3",
     startsAt: "2026-10-14T18:30:00+08:00",
