@@ -83,6 +83,16 @@ export const readingDiscussionQuestions = [
 // 每次活动新增一条记录，保留旧记录。填写示例见 READING_GROUPS.md。
 export const readingActivities: ReadingActivity[] = [
   {
+    id: "group-1-20261017-01",
+    groupId: "group-1",
+    startsAt: "2026-10-17T19:00:00+08:00",
+    location: "腾讯会议",
+    presenters: ["陆运阳"],
+    paperTitle: "On the Set of Balanced Games",
+    paperAuthors: "P. Garcia-Segador, M. Grabisch, P. Miranda",
+    paperVenue: "Mathematics of Operations Research, 50(3): 2047–2072, 2025",
+  },
+  {
     id: "group-2-20261019-01",
     groupId: "group-2",
     startsAt: "2026-10-19T18:30:00+08:00",
