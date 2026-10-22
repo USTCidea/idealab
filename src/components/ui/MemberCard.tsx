@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
-import Button from "./Button";
 import type { TeamMember } from "../../types";
 
 interface MemberCardProps {
@@ -133,18 +132,11 @@ const MemberCard: React.FC<MemberCardProps> = ({
             </div>
           )}
 
-          {/* 操作按钮 - 只保留联系按钮 */}
+          {/* 邮箱信息 */}
           {showStudentProfile && member.email && (
-            <div className="mt-1 flex justify-center">
-              <a href={`mailto:${member.email}`}>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  icon={<EnvelopeIcon className="h-4 w-4" />}
-                >
-                  联系
-                </Button>
-              </a>
+            <div className="mt-2 flex items-start justify-center gap-2 px-2 text-sm text-primary-700">
+              <EnvelopeIcon className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+              <span className="break-all leading-5">{member.email}</span>
             </div>
           )}
         </div>
