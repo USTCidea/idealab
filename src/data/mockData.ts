@@ -2526,6 +2526,34 @@ export const mockPublications: Publication[] = [
 // 学术讲座数据（仅包含talk类型）
 export const mockLectures: NewsItem[] = [
   {
+    id: "talk55",
+    title: "从单智能体到多智能体大语言模型推理调度：新边界与近似算法",
+    category: "talk",
+    content:
+      "英文题目：From Single-Agent to Multi-Agent LLM Inference Scheduling: New Bounds and Approximation Algorithms\n\n主持人：刘林冬\n\n报告摘要：\nWe study the scheduling of Large Language Model (LLM) inference workloads on GPUs with limited Key-Value (KV) cache memory. A key challenge is that the KV-cache usage of each request grows linearly with the number of generated tokens, creating a time-varying memory constraint that differs fundamentally from classical scheduling models. We develop a novel job squashing relaxation technique that connects LLM inference scheduling to classical scheduling and enables lower-bound analysis and design of approximation algorithms. We then analyze list scheduling, and establish new upper bounds on job start and completion times under this policy. With these bounds, for the single-agent setting, we obtain polynomial-time approximation algorithms for two objectives; for the multi-agent setting, we minimize the total completion time of one primary agent while requiring the makespans of the other agents not exceeding prescribed thresholds. We show that no constant-factor approximation algorithm exists unless P = NP. Nevertheless, by extending the single-agent analysis, we develop a new relaxation-based mapping algorithm with guaranteed ratio of total completion time for the primary agent, while the makespan of each other agent is at most the same factor times its prescribed threshold. Trace-driven, profile-informed simulations using public workload traces show that the proposed algorithms remain effective under batch-dependent iteration times and moderate output-length errors. These results can also be extended to parallel machines settings.\n\n报告人简介：\n万国华，上海交通大学特聘教授，主要研究兴趣为制造与医疗服务运营管理、大数据及智能优化。主持国家杰出青年科学基金、国家自然科学基金重大、重点、重点国际（地区）合作及企业研究项目20余项，研究成果发表于 Management Science、Operations Research、Mathematics of Operations Research 和 Manufacturing & Service Operations Management 等国内外学术刊物。2024年获中国运筹学会科学技术奖运筹研究奖。现任 Production and Operations Management Senior Editor、Journal of Management Analytics 执行主编、Journal of Operations Research Society of China 编委和《管理科学学报》领域编辑、《运筹学学报》编委，以及中国运筹学会常务理事、上海市运筹学会理事长等职。",
+    publishDate: "2026-10-28",
+    status: "published",
+    images: ["images/lectures/20261028-wan-guohua.jpg"],
+    tags: ["学术报告", "大语言模型", "推理调度", "近似算法"],
+    talkSpeaker: "万国华（上海交通大学）",
+    talkTime: "2026-10-28 10:00",
+    talkLocation: "管理科研楼105讨论室（二案）",
+  },
+  {
+    id: "talk54",
+    title: "CNAIS 2026研究方法讲习班在中国科学技术大学科技商学院、管理学院成功举办",
+    category: "talk",
+    content:
+      "2026年10月16日，第五届CNAIS研究方法讲习班在中国科学技术大学科技商学院、管理学院举行。本届讲习班由中国系统工程学会信息系统工程专业委员会（CNAIS）主办，中国科学技术大学科技商学院、管理学院承办。\n\n开幕式由中国科学技术大学科技商学院、管理学院副教授杜前舟主持，CNAIS常务理事兼秘书长、清华大学经济管理学院郭迅华教授，中国科学技术大学科技商学院、管理学院副院长刘林冬教授出席开幕式并致辞。郭迅华教授回顾了CNAIS研究方法讲习班的办班历程，刘林冬教授对授课专家表示热烈欢迎与诚挚感谢。两位致辞嘉宾希望大家以讲习班为平台，助力青年学者与研究生夯实方法功底、提升学术能力。\n\n本届讲习班由复旦大学方向华教授、中国人民大学张瑾教授、对外经济贸易大学李亮教授、清华大学徐心教授四位专家授课。",
+    publishDate: "2026-10-20",
+    status: "published",
+    images: ["images/lectures/20261016-cnais-workshop.png"],
+    tags: ["研究方法讲习班", "CNAIS", "学术活动"],
+    talkSpeaker: "方向华、张瑾、李亮、徐心",
+    talkTime: "2026-10-16",
+    talkLocation: "中国科学技术大学科技商学院、管理学院",
+  },
+  {
     id: "talk53",
     title: "随机需求下考虑自有车队与外包承运商的车辆路径问题",
     category: "talk",
