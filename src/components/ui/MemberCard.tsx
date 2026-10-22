@@ -113,7 +113,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
 
           {/* 详细信息 */}
           {showDetails && (
-            <div className="mt-3 space-y-2 text-left">
+            <div className="mt-3 space-y-2 text-center">
               {cardBio && (
                 <p className="text-sm text-gray-600 leading-relaxed">
                   {cardBio}

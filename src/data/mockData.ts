@@ -348,7 +348,7 @@ export const mockTeamMembers: TeamMember[] = [
     email: "wenqian_liu@swjtu.edu.cn",
     website: "https://faculty.swjtu.edu.cn/liuwenqian1/zh_CN/index.htm",
     researchInterests: ["低空物流", "智慧调度"],
-    bio: "助理教授，专注于低空物流与智慧调度研究，主要关注低空物流与无人机协同配送等问题。",
+    bio: "助理教授，专注于低空物流与智慧调度研究，主要关注低空物流、无人机协同配送以及复杂场景下的智能调度问题。",
     education: [
       {
         degree: "博士学位",
