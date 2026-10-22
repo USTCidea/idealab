@@ -16,7 +16,7 @@ export const mockTeamMembers: TeamMember[] = [
       "优化理论、算法及其应用",
       "智慧物流",
     ],
-    bio: "特任教授，博士生导师，专注于优化理论、算法及其应用研究，在智慧交通、智慧物流、智能制造等领域有重要贡献。",
+    bio: "特任教授，博士生导师，专注于优化理论、算法及其应用研究，研究涵盖智慧交通、智慧物流与智能制造等场景。",
     education: [
       {
         degree: "博士学位",
@@ -81,7 +81,7 @@ export const mockTeamMembers: TeamMember[] = [
     email: "yifuli@ustc.edu.cn",
     website: "https://bs.ustc.edu.cn/chinese/profile-1999.html",
     researchInterests: ["体验设计与服务运营优化"],
-    bio: "特任副教授，研究生导师，专注于体验设计与服务运营优化研究，在服务设计、用户体验等领域有重要贡献。",
+    bio: "特任副教授，研究生导师，专注于体验设计与服务运营优化研究，围绕服务设计、用户体验及相关运营问题开展研究。",
     education: [
       {
         degree: "博士学位",
@@ -148,7 +148,7 @@ export const mockTeamMembers: TeamMember[] = [
       "智慧城市运营管理",
       "分布式鲁棒优化",
     ],
-    bio: "特任副教授，研究生导师，专注于智慧城市运营管理研究，在分布式鲁棒优化等领域有重要贡献。",
+    bio: "特任副教授，研究生导师，专注于智慧城市运营管理研究，研究方向包括分布式鲁棒优化及其在城市运营中的应用。",
     education: [
       {
         degree: "博士学位",
@@ -195,7 +195,7 @@ export const mockTeamMembers: TeamMember[] = [
       "预约调度",
       "动态规划",
     ],
-    bio: "特任副教授，研究生导师，专注于预约调度与资源规划研究，在动态规划等领域有重要贡献。",
+    bio: "特任副教授，研究生导师，专注于预约调度与资源规划研究，主要关注动态规划方法及其在预约调度与资源配置中的应用。",
     education: [
       {
         degree: "博士学位",
@@ -241,7 +241,7 @@ export const mockTeamMembers: TeamMember[] = [
       "数据驱动的运营管理",
       "分布式鲁棒优化",
     ],
-    bio: "特任副研究员，专注于数据驱动运营管理研究，在鲁棒优化与机器学习等领域有重要贡献。",
+    bio: "特任副研究员，专注于数据驱动运营管理研究，主要研究鲁棒优化、机器学习与运营决策的结合。",
     education: [
       {
         degree: "博士学位",
@@ -296,7 +296,7 @@ export const mockTeamMembers: TeamMember[] = [
     email: "dujianzhong@ustc.edu.cn",
     website: "https://bs.ustc.edu.cn/chinese/profile-2322.html",
     researchInterests: ["仿真优化及其应用"],
-    bio: "特任副教授，专注于仿真优化及其应用研究，在随机优化、仿真建模及相关应用等领域有重要贡献。",
+    bio: "特任副教授，专注于仿真优化及其应用研究，研究内容涉及随机优化、仿真建模及相关应用。",
     education: [
       {
         degree: "博士学位",
@@ -348,7 +348,7 @@ export const mockTeamMembers: TeamMember[] = [
     email: "wenqian_liu@swjtu.edu.cn",
     website: "https://faculty.swjtu.edu.cn/liuwenqian1/zh_CN/index.htm",
     researchInterests: ["低空物流", "智慧调度"],
-    bio: "助理教授，专注于低空物流与智慧调度研究，在低空物流和无人机协同配送等领域有重要贡献。",
+    bio: "助理教授，专注于低空物流与智慧调度研究，主要关注低空物流与无人机协同配送等问题。",
     education: [
       {
         degree: "博士学位",
@@ -396,7 +396,7 @@ export const mockTeamMembers: TeamMember[] = [
       "数据驱动的运营管理",
       "智慧交通",
     ],
-    bio: "特任副研究员，研究生导师，专注于智慧交通运营优化研究，在数据驱动决策等领域有重要贡献。",
+    bio: "特任副研究员，研究生导师，专注于智慧交通运营优化研究，主要研究数据驱动决策方法及其在智慧交通中的应用。",
     education: [
       {
         degree: "博士学位",
@@ -440,7 +440,7 @@ export const mockTeamMembers: TeamMember[] = [
     email: "wangderui@ustc.edu.cn",
     website: "https://bs.ustc.edu.cn/chinese/profile-2216.html",
     researchInterests: ["供应链管理", "风险管理"],
-    bio: "特任副教授，研究生导师，专注于供应链管理与风险管理研究，在竞合博弈等领域有重要贡献。",
+    bio: "特任副教授，研究生导师，专注于供应链管理与风险管理研究，研究内容涉及竞合博弈及相关运营决策问题。",
     education: [
       {
         degree: "博士学位",
@@ -479,7 +479,7 @@ export const mockTeamMembers: TeamMember[] = [
     email: "luwentao@ustc.edu.cn",
     website: "https://bs.ustc.edu.cn/chinese/profile-2651.html",
     researchInterests: ["平台运营", "收益管理与定价"],
-    bio: "特任副教授，研究生导师，专注于平台运营与收益管理研究，在定价策略等领域有重要贡献。",
+    bio: "特任副教授，研究生导师，专注于平台运营与收益管理研究，主要关注定价策略及相关平台运营问题。",
     education: [
       {
         degree: "博士学位",
