@@ -98,6 +98,54 @@ const researchAreas: ResearchArea[] = [];
 // 研究生课题/学位论文数据（姓名、学位/类型、年份、研究课题）
 const researchTheses = [
   {
+    name: "卢蔚乾",
+    degree: "博士",
+    year: 2026,
+    topic: "信息与偏好差异下的消费者搜索行为研究",
+  },
+  {
+    name: "刘许成",
+    degree: "博士",
+    year: 2026,
+    topic: "级联结构约束下短视与长视局中人大联盟稳定性研究",
+  },
+  {
+    name: "汪勐航",
+    degree: "博士",
+    year: 2026,
+    topic: "兼具公平性和鲁棒性的合作配送博弈研究",
+  },
+  {
+    name: "陈龙",
+    degree: "硕士(学术)",
+    year: 2026,
+    topic: "考虑广义有限等待时间和序列相关设置时间的流水车间调度问题",
+  },
+  {
+    name: "许仁静",
+    degree: "硕士(学术)",
+    year: 2026,
+    topic: "水资源稀缺背景下灌区用水分配与轮作模式的研究",
+  },
+  {
+    name: "张耀太",
+    degree: "硕士(工程)",
+    year: 2026,
+    topic: "基于深度强化学习的半导体车间调度研究",
+  },
+  {
+    name: "肖涵菲",
+    degree: "硕士(工程)",
+    year: 2026,
+    topic: "多维度约束下城市配送中的路径与装载协同优化",
+  },
+  {
+    name: "许璟钊",
+    degree: "硕士(工程)",
+    year: 2026,
+    topic: "基于随机提前期的按订单装配系统组件补货与分配联合优化研究",
+  },
+  {
     name: "宣洪伟",
     degree: "博士",
     year: 2022,
@@ -173,6 +221,12 @@ const researchTheses = [
     topic: "基于学习搜索的多时间窗路径规划问题求解方法",
   },
 ];
+
+const degreeOrder: Record<string, number> = {
+  博士: 0,
+  "硕士(学术)": 1,
+  "硕士(工程)": 2,
+};
 
 const Research: React.FC = () => {
   // 搜索关键词（研究领域与搜索框隐藏时保留便于恢复）
@@ -283,16 +337,11 @@ const Research: React.FC = () => {
               <tbody className="divide-y divide-gray-200 bg-white">
                 {[...researchTheses]
                   .sort((a, b) => {
-                    // 博士在前：假设 degree 字段包含 "博士" 或 "硕士"
-                    if (a.degree === b.degree) {
-                      // 同类型按毕业年份降序
-                      return (b.year || 0) - (a.year || 0);
-                    }
-                    if (a.degree.includes("博士") && !b.degree.includes("博士"))
-                      return -1;
-                    if (!a.degree.includes("博士") && b.degree.includes("博士"))
-                      return 1;
-                    return 0;
+                    // 按学位类型分组，同类型内按毕业年份降序。
+                    return (
+                      degreeOrder[a.degree] - degreeOrder[b.degree] ||
+                      b.year - a.year
+                    );
                   })
                   .map((row, index) => (
                     <tr
