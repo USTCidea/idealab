@@ -116,6 +116,12 @@ const researchTheses = [
     topic: "兼具公平性和鲁棒性的合作配送博弈研究",
   },
   {
+    name: "徐宽",
+    degree: "博士",
+    year: 2026,
+    topic: "基于学习优化的车辆路径规划算法研究",
+  },
+  {
     name: "陈龙",
     degree: "硕士(学术)",
     year: 2026,
