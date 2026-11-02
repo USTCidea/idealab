@@ -1,12 +1,20 @@
 # 阅读小组内容更新
 
-页面地址：`/idealab/reading-groups`。内容统一维护在 `src/data/readingGroups.ts`。
+页面地址：`/idealab/reading-groups`。小组和活动维护在 `src/data/readingGroups.ts`，论文集维护在 `src/data/readingCollections.ts`。
 
 ## 设置小组
 
 修改 `readingGroups` 中的 `name`（组名）、`teachers`（老师姓名数组）、`members`（学生姓名数组）。保持 `id` 不变，活动通过它关联到对应小组。当前四组依次为合作优化、优化学习、数据智能、运营管理方向，ID 为 `group-1` 至 `group-4`。未提供的名单保持 `[]`，页面会显示“名单待公布”。
 
 活动规则和讨论问题保留在同一文件的 `readingGuidelines`、`readingDiscussionQuestions` 中作为内部参考，网页不展示这些内容。
+
+## 更新论文集
+
+“讨论班论文集”位于分组与活动安排之间，用一个卡片展示四个方向的论文集，每份统一提供“在线阅读”和“下载论文集”。论文标题和活动记录不逐篇显示 PDF 或 DOI 按钮。
+
+论文集元数据维护在 `src/data/readingCollections.ts`，填写方向名称、收录篇数、版本月份、PDF 路径及下载文件名。PDF 文件放在 `public/reading-collections/`，`pdfPath` 从该目录开始填写，不带 `/idealab/` 前缀；页面会自动添加本站路径。
+
+当前为2026年11月版本，提供原始合并版 PDF，文件内已有各篇导读书签。后续更新版本时，同步替换文件并核对篇数、月份和书签。纸面目录印刷页码与合并后的实际页码不同，若增加网页单篇跳页入口，应以实际 PDF 页码为准。
 
 ## 每次新增活动
 

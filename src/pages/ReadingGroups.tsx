@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import {
+  ArrowDownTrayIcon,
+  ArrowTopRightOnSquareIcon,
   BookOpenIcon,
   CalendarDaysIcon,
   MapPinIcon,
@@ -8,6 +10,8 @@ import {
 import Container from "../components/layout/Container";
 import { readingGroups, readingActivities, getActivityStatus } from "../data/readingGroups";
 import type { ReadingActivity } from "../data/readingGroups";
+import { readingCollections } from "../data/readingCollections";
+import type { ReadingCollection } from "../data/readingCollections";
 
 const dateFormat = new Intl.DateTimeFormat("zh-CN", {
   timeZone: "Asia/Shanghai", month: "long", day: "numeric", year: "numeric", weekday: "short",
@@ -55,18 +59,32 @@ function ActivityCard({ activity, now }: { activity: ReadingActivity; now: numbe
   );
 }
 
-function DiscussionPaperRow({ activity, index }: { activity: ReadingActivity; index: number }) {
+function ReadingCollectionRow({ collection }: { collection: ReadingCollection }) {
+  const pdfUrl = `${import.meta.env.BASE_URL}${collection.pdfPath}`;
   return (
-    <article className="group flex gap-4 px-5 py-5 transition-colors hover:bg-blue-50/40 sm:px-7">
-      <span className="pt-0.5 text-sm font-semibold tabular-nums text-blue-300" aria-hidden="true">
-        {String(index + 1).padStart(2, "0")}
-      </span>
-      <div className="min-w-0 flex-1">
-        <h3 className="break-words text-base font-semibold leading-relaxed text-gray-900 transition-colors group-hover:text-blue-800 sm:text-lg">
-          {activity.paperTitle}
-        </h3>
+    <li className="flex flex-col gap-4 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-7">
+      <div className="flex min-w-0 items-center gap-4">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
+          <BookOpenIcon className="h-5 w-5" aria-hidden="true" />
+        </span>
+        <div>
+          <h3 className="text-base font-semibold text-gray-900 sm:text-lg">{collection.title}</h3>
+          <div className="mt-1 text-sm text-gray-500">{collection.paperCount} 篇论文 · {collection.edition}</div>
+        </div>
       </div>
-    </article>
+      <div className="flex flex-wrap gap-3 sm:shrink-0">
+        <a href={pdfUrl} target="_blank" rel="noopener noreferrer"
+          aria-label={`在线阅读${collection.title}论文集（新标签打开）`}
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-800 px-4 py-2 text-sm font-medium text-white! transition-colors hover:bg-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">
+          在线阅读<ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
+        </a>
+        <a href={pdfUrl} download={collection.downloadName}
+          aria-label={`下载${collection.title}论文集`}
+          className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-blue-800 transition-colors hover:border-blue-300 hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">
+          <ArrowDownTrayIcon className="h-4 w-4" aria-hidden="true" />下载论文集
+        </a>
+      </div>
+    </li>
   );
 }
 
@@ -120,16 +138,14 @@ export default function ReadingGroups() {
         <section aria-labelledby="discussion-papers-title" className="mb-12">
           <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
             <div>
-              <h2 id="discussion-papers-title" className="text-2xl font-bold">讨论班论文</h2>
-              <p className="mt-2 text-base text-gray-500">汇集各阅读小组讨论过的论文，保留全文与 DOI 信息，便于后续查阅和延伸阅读。</p>
+              <h2 id="discussion-papers-title" className="text-2xl font-bold">讨论班论文集</h2>
+              <p className="mt-2 text-base text-gray-500">按研究方向汇编论文导读与全文，便于阅读和查阅。</p>
             </div>
-            <span className="text-sm text-gray-500">共 {readingActivities.length} 篇</span>
+            <span className="text-sm text-gray-500">共 {readingCollections.length} 份论文集</span>
           </div>
-          <div className="divide-y divide-gray-100 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
-            {[...readingActivities]
-              .sort((a, b) => Date.parse(b.startsAt) - Date.parse(a.startsAt))
-              .map((activity, index) => <DiscussionPaperRow key={activity.id} activity={activity} index={index} />)}
-          </div>
+          <ul className="divide-y divide-gray-100 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+            {readingCollections.map((collection) => <ReadingCollectionRow key={collection.id} collection={collection} />)}
+          </ul>
         </section>
 
         <section id="reading-activities" aria-labelledby="activities-title" className="scroll-mt-28">
