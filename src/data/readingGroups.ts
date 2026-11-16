@@ -83,6 +83,24 @@ export const readingDiscussionQuestions = [
 // 每次活动新增一条记录，保留旧记录。填写示例见 READING_GROUPS.md。
 export const readingActivities: ReadingActivity[] = [
   {
+    id: "group-3-20261118-01",
+    groupId: "group-3",
+    startsAt: "2026-11-18T19:00:00+08:00",
+    location: "管科楼107",
+    presenters: ["李昊洋"],
+    paperTitle:
+      "Data-Driven Mechanism Design: Jointly Eliciting Preferences and Information",
+  },
+  {
+    id: "group-1-20261113-01",
+    groupId: "group-1",
+    startsAt: "2026-11-13T14:00:00+08:00",
+    location: "腾讯会议",
+    presenters: ["刘许成"],
+    paperTitle:
+      "A decomposition algorithm for single and multiobjective integrated market selection and production planning",
+  },
+  {
     id: "group-3-20261104-01",
     groupId: "group-3",
     startsAt: "2026-11-04T18:30:00+08:00",
